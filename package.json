@@ -1,0 +1,48 @@
+{
+  "name": "Calc",
+  "version": "1.0.0",
+  "description": "Calculate builder with JavaScript",
+  "main": "./index.js",
+  "scripts": {
+    "start": "electron index.js",
+    "pack": "electron-builder --dir",
+    "dist": "electron-builder",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "Cristian Gonzalez",
+  "license": "MIT",
+  "build":{
+    "appId": "calcv1",
+    "asar": true,
+    "dmg": {
+      "contents": [
+        {
+          "x": 110,
+          "y": 150
+        },
+        {
+          "x": 240,
+          "y":150,
+          "type": "link",
+          "path": "/Aplications"
+        }
+      ]
+    },
+    "linux": {
+      "target": [
+        "AppImage",
+        "deb"
+      ]
+    },
+    "win": {
+      "target": "NSIS",
+      "icon": "build/icon.ico"
+    }
+  },
+  "dependencies": {
+  },
+  "devDependencies": {
+    "electron-builder": "^22.7.0"
+  }
+}
